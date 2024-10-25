@@ -1,0 +1,62 @@
+body{
+    overflow-x: hidden;
+    background-color: rgb(242, 246, 245);
+}
+.gradient-text {
+    background: linear-gradient(65deg, #382CC5, #7C86DC);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+#search{
+    margin-left: 10px;
+}
+
+#search>input{
+    width: 300px;
+    background-color: white;
+    font-weight: bold;
+    /*color: #382CC5;*/
+
+}
+
+#search>button{
+    border: #382CC5 solid 2px;
+   /* color: #382CC5;*/
+    font-weight: bold;
+}
+
+#samplePos,#menuBar>li>a{
+    margin-left: 10px;
+    /*color: #382CC5;*/
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-color: #0e0f0e;
+    color: #ffffff;
+    padding: 128px 43px;
+}
+
+.jumbotron h1 {
+    font-size: 3rem; 
+}
+
+.jumbotron p {
+    font-size: 1.25rem;
+}
+
+.btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff;
+}
+
+.rounded {
+    width: 200px; 
+    height: 200px;
+    border: 5px solid #fff; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    border-radius: 100%; 
+    object-fit: cover; 
+}
