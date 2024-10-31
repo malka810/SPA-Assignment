@@ -41,9 +41,6 @@
         <li class="nav-item">
           <a class="nav-link gradient-text" id="order_page" href="#Order">Order</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link gradient-text" id="order_details_page" href="#orderDetails">Order Details</a>
-        </li>
       </ul>
       <form class="d-flex" role="search">
         <input id="searchField" class="form-control me-2" type="search" placeholder="Search Text Here" aria-label="Search">
@@ -73,7 +70,7 @@
         <div class="col">
           <form class="form_input">
             <div class="mb-3">
-              <label for="customer_id" class="form-label">Customer Id</label>
+              <label for="customer_id" class="form-label">Customer ID</label>
               <input type="text" class="form-control" id="customer_id" placeholder="Customer Id Here">
             </div>
             <div class="mb-3">
@@ -85,17 +82,17 @@
               <textarea class="form-control" id="address" rows="3" placeholder="Address Here"></textarea>
             </div>
             <div class="mb-3">
-              <label for="contact" class="form-label">Contact</label>
-              <input type="tel" class="form-control" id="contact" placeholder="Contact Here">
-            </div>
-            <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="email" class="form-control" id="email" placeholder="Email Here">
             </div>
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact</label>
+              <input type="tel" class="form-control" id="contact" placeholder="Contact Here">
+            </div>
             <div class="mt-1 button">
               <button id="customer_add_btn" type="button" class="btn btn-success">Add</button>
-              <button id="updateBtn" type="button" class="btn btn-primary">Update</button>
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button id="customer_update_btn" type="button" class="btn btn-primary">Update</button>
+              <button id="customer_delete_btn" type="button" class="btn btn-danger">Delete</button>
               <button type="reset" class="btn btn-warning">Reset</button>
             </div>
           </form>
@@ -104,7 +101,7 @@
           <table class="table" id="customerTable">
             <thead class="table-primary">
             <tr>
-              <th>Customer Id</th>
+              <th>Customer ID</th>
               <th>Customer Name</th>
               <th >Address</th>
               <th>Contact</th>
@@ -134,22 +131,22 @@
               <input type="text" class="form-control" id="item_code" placeholder="Item Code Here" disabled>
             </div>
             <div class="mb-3">
-              <label for="item_name" class="form-label">Item Name</label>
-              <input type="text" class="form-control" id="item_name" placeholder="Item Name Here">
+              <label for="description" class="form-label">Item Name</label>
+              <input type="text" class="form-control" id="description" placeholder="Description Here">
             </div>
             <div class="mb-3">
               <label for="price" class="form-label">Price</label>
               <input type="number" class="form-control" id="price" placeholder="Price Here">
             </div>
             <div class="mb-3">
-              <label for="QtyOnHand" class="form-label">Qty on hand</label>
-              <input type="number" class="form-control" id="QtyOnHand" placeholder="Qty On Hand Here">
+              <label for="qty" class="form-label">Qty on hand</label>
+              <input type="number" class="form-control" id="qty" placeholder="Qty On Hand Here">
             </div>
             <div class="mt-1 button">
-              <button id="submitBtn1" type="button" class="btn btn-success">Submit</button>
-              <button id="updateBtn1" type="button" class="btn btn-primary">Update</button>
-              <button type="button" class="btn btn-danger">Delete</button>
-              <button type="reset" class="btn btn-warning">Reset</button>
+              <button id="item_add_btn" type="button" class="btn btn-success">Add</button>
+              <button id="item_update_btn" type="button" class="btn btn-primary">Update</button>
+              <button id="item_delete_btn" type="button" class="btn btn-danger">Delete</button>
+              <button id="item_reset_btn" type="reset" class="btn btn-warning">Clear</button>
             </div>
           </form>
         </div>
@@ -163,7 +160,7 @@
               <th scope="col">Qty On Hand</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="itemTableBody">
             </tbody>
           </table>
         </div>
@@ -173,149 +170,109 @@
 </main>
 <!--Order Page-->
 <main id="Order">
-  <section>
-    <div class="container mb-5">
-      <div class="row">
-        <div class="col-md-6 mt-3">
-          <div class="card" id="invoiceDetails">
-            <div class="card-header text-center gradient-text">
-              Invoice Details
-            </div>
-            <div class="mb-3 col-md-11 mt-3">
-              <label for="order_date" class="form-label">Order Date</label>
-              <input type="date" class="form-control" id="order_date" placeholder="Order Date Here" disabled>
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="order_id" class="form-label">Order Id</label>
-              <input type="text" class="form-control" id="order_id" placeholder="Order Id Here" disabled>
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="customer_id1" class="form-label">Customer Id</label>
-              <select class="form-select" aria-label="Disabled select example" id="customer_id1">
-                <option selected>Select Customer Id</option>
-              </select>
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="customer_name1" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="customer_name1" placeholder="Customer Name Here" disabled>
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="total" class="form-label">Total</label>
-              <input type="number" class="form-control" id="total" placeholder="Total Here" disabled>
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="discount" class="form-label">Discount</label>
-              <input type="number" class="form-control" id="discount" placeholder="Discount in percentage Here">
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="sub_total" class="form-label">Sub Total</label>
-              <input type="number" class="form-control" id="sub_total" placeholder="Sub Total Here" disabled>
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="Cash" class="form-label">Cash</label>
-              <input type="number" class="form-control" id="Cash" placeholder="Cash Here">
-            </div>
-            <div class="mb-3 col-md-11">
-              <label for="balance" class="form-label">Balance</label>
-              <input type="number" class="form-control" id="balance" placeholder="Balance Here" disabled>
-            </div>
-            <div class="mt-1 mb-3" id="button">
-              <button id="submitBtn2" type="submit" class="btn btn-success">Purchase</button>
-              <button id="updateBtn2" type="button" class="btn btn-primary">Update</button>
-              <button id="deleteBtn2" type="button" class="btn btn-danger">Delete</button>
-              <button id="resetBtn2" type="reset" class="btn btn-warning">Reset</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-3">
-          <div class="card" id="orderDetails1">
-            <div class="card-header text-center gradient-text">
-              Order Details
-            </div>
-            <div class="m-3 col-md-11">
-              <label for="item_code1" class="form-label">Item Code</label>
-              <select class="form-select" aria-label="Disabled select example" id="item_code1">
-                <option selected>Select Item Code</option>
-              </select>
-            </div>
-            <div class="m-3 col-md-11">
-              <label for="item_name1" class="form-label">Item Name</label>
-              <input type="text" class="form-control" id="item_name1" placeholder="Item Name Here" disabled>
-            </div>
-            <div class="m-3 col-md-11">
-              <label for="price1" class="form-label">Price</label>
-              <input type="number" class="form-control" id="price1" placeholder="Price Here" disabled>
-            </div>
-            <div class="m-3 col-md-11">
-              <label for="qty_on_hand" class="form-label">Qty on Hand</label>
-              <input type="number" class="form-control" id="qty_on_hand" placeholder="Qty on hand Here" disabled>
-            </div>
-            <div class="m-3 col-md-11">
-              <label for="getQty" class="form-label">Getting Qty</label>
-              <input type="number" class="form-control" id="getQty" placeholder="Qty Here">
-            </div>
-            <div class="m-3" id="button1">
-              <button id="addBtn" type="submit" class="btn btn-success">Add</button>
-              <button id="UpdateBtn3" type="button" class="btn btn-primary">Update</button>
-              <button id="removeBtn" type="button" class="btn btn-danger">Remove</button>
-              <button id="resetItemDetailsBtn" type="reset" class="btn btn-warning">Reset</button>
-            </div>
-            <div class="col m-3">
-              <table class="table" id="item-order-table">
-                <thead class="table-primary">
-                <tr>
-                  <th scope="col">Item Code</th>
-                  <th scope="col">Item Name</th>
-                  <th scope="col">Price Per Kg</th>
-                  <th scope="col">Qty On Hand</th>
-                  <th scope="col">Qty</th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-<!--OrderDetails-->
-<main id="OrderDetails">
-  <section>
-    <div id="form">
-      <div class="text-center gradient-text">
-        <h3>Order Details Form</h3>
+  <div class="card3 border-success mb-3" id="order-section" style="max-width: 300rem;">
+    <div class="card3-header">
+      <div>
+        <h3>Order form</h3>
+        <!--            <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+        <!--                <li class="nav-item">-->
+        <!--                    <a class="nav-link active" aria-current="page" href="index.html">Dashbord</a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
       </div>
 
-      <div class="col table1">
-        <table class="table" id="item-details-table">
-          <thead class="table-primary">
-          <tr>
-            <th scope="col">Order Id</th>
-            <th scope="col">Order Date</th>
-            <th scope="col">Customer Id</th>
-            <th scope="col">Total</th>
-            <th scope="col">Discount</th>
-            <th scope="col">Sub Total</th>
-            <th scope="col">Cash</th>
-            <th scope="col">Balance</th>
-          </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+    </div><br>
+
+    <div class="container text-start">
+      <div class="row row-cols-2 row-xs-2 row-sm-4 row-md-4 row-lg-4 row-xl-2 row-xxl-2">
+        <div class="mb-3">
+          <label for="orderId" class="form-label">Order Id :</label>
+          <input type="text" class="form-control" id="orderId" placeholder="O001" required>
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date</label>
+          <input type="date" class="form-control" id="date" placeholder="Email" required>
+        </div>
+      </div>
+
+      <div class="row row-cols-2 row-xs-2 row-sm-4 row-md-4 row-lg-4 row-xl-2 row-xxl-2">
+        <div class="mb-3">
+          <label id="cusId">Customer ID</label>
+          <select class="form-select" aria-label="Default select example" id="customers"></select>
+        </div>
+
+        <div class="mb-3">
+          <label for="customerName" class="form-label" id="cuName">Customer Name</label>
+          <input type="text" class="form-control" id="customerName" aria-describedby="emailHelp" placeholder="Enter name">
+
+        </div>
+
+      </div>
+
+      <div class="row row-cols-2 row-xs-2 row-sm-4 row-md-4 row-lg-4 row-xl-2 row-xxl-2">
+        <div class="mb-3">
+          <label id="iCode">Item Code</label>
+          <select class="form-select" aria-label="Default select example" id="itemSea"></select>
+        </div>
+        <div class="mb-3">
+          <label for="itemName" class="form-label" id="iName">Item name</label>
+          <input type="text" class="form-control" id="itemName" aria-describedby="emailHelp" >
+        </div>
+      </div>
+
+      <div class="row row-cols-2 row-xs-2 row-sm-4 row-md-4 row-lg-4 row-xl-2 row-xxl-2">
+        <div class="mb-3">
+          <label for="itemPrice" class="form-label" id="unit_price">Unit Price</label>
+          <input type="text" class="form-control" id="itemPrice" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="qty1" class="form-label" id="qty1">Qty On Hand</label>
+          <input type="text" class="form-control" id="itemQtyOnHand" aria-describedby="emailHelp" >
+        </div>
+      </div>
+
+      <div class="row row-cols-2 row-xs-2 row-sm-4 row-md-4 row-lg-4 row-xl-2 row-xxl-2">
+        <div class="mb-3">
+          <label for="itemQty" class="form-label" id="qtyLbl">Quantity</label>
+          <input type="text" class="form-control" id="itemQty" aria-describedby="emailHelp"><br>
+        </div>
+
       </div>
     </div>
-  </section>
+
+
+    <div >
+      <button type="button" class="btn btn-primary w-50" id="orSaveBtn" style="color: white">Save</button>
+
+    </div>
+
+    <table  class="table table-bordered" >
+      <thead>
+      <tr class="table-light" style="border: 3px solid black">
+        <th scope="col">Item Code</th>
+        <th scope="col">Description</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+      </tr>
+      </thead>
+      <tbody id="orderTableBody">
+      <tr>
+      </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success" id="order_btn">Place Order</button>
+  </div>
 </main>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/Script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
 </body>
 </html>
